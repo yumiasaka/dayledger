@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dayledger"
+version = "0.1.0"
+description = "Log daily activities and expenses in plain text."
+authors = [ { name = "yumi asaka" } ]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+dayledger = "dayledger.cli:main"
+
+[tool.setuptools]
+packages = ["dayledger"]
+
