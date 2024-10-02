@@ -15,3 +15,6 @@ coverage.xml
 # project data
 .dayledger/
 
+# scratch
+notes/
+.tmp/
