@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 from .storage import Entry, append_entry, read_entries, ensure_home
+from .summary import total_today, by_tag_today
 
 
 def cmd_init(_: argparse.Namespace) -> int:
@@ -49,6 +50,14 @@ def build_parser() -> argparse.ArgumentParser:
   sp = sub.add_parser("list", help="list today entries")
   sp.set_defaults(func=cmd_list)
 
+  sp = sub.add_parser("sum", help="show today totals")
+  def _sum(_: argparse.Namespace) -> int:
+    print(f"total: {total_today():.2f}")
+    for k, v in by_tag_today().items():
+      print(f"{k}: {v:.2f}")
+    return 0
+  sp.set_defaults(func=_sum)
+
   return p
 
 
@@ -60,4 +69,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
   raise SystemExit(main())
-
