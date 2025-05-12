@@ -35,3 +35,5 @@ dayledger sum --month    # quick totals
 ## License
 MIT
 
+
+-  — totals for today
