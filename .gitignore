@@ -1,16 +1,16 @@
 # artifacts
 dist/
-.pytest_cache/
 *.pyc
-.mypy_cache/
-__pycache__/
+.pytest_cache/
 .coverage
+__pycache__/
+.mypy_cache/
 
 # tooling
-venv/
 .venv/
-.DS_Store
 coverage.xml
+.DS_Store
+venv/
 
 # project data
 .dayledger/
